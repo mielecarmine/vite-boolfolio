@@ -1,33 +1,23 @@
 <script>
 import axios from "axios";
+import { store } from "./store/index";
+import AppMain from "./components/AppMain.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
     return {
-      projects: [],
+      store,
     };
   },
 
-  methods: {
-    getProjects() {
-      axios.get("http://127.0.0.1:8000/api/projects").then((res) => {
-        console.log(res.data);
-      });
-    },
-  },
-
-  //   mounted: {
-  //     getProjects() {
-  //       axios.get("http://127.0.0.1:8000/api/projects").then((res) => {
-  //         console.log(res);
-  //       });
-  //     },
-  //   },
+  components: { AppMain, AppHeader },
 };
 </script>
 <template>
   <div class="container">
-    <h1 @click="getProjects()">Click</h1>
+    <app-header />
+    <app-main />
   </div>
 </template>
 <style lang="scss">
