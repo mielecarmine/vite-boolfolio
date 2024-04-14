@@ -16,6 +16,7 @@ export default {
     getProjects() {
       axios.get("http://127.0.0.1:8000/api/projects").then((res) => {
         store.projects = res.data;
+        console.log(store.projects);
       });
     },
   },
@@ -29,7 +30,7 @@ export default {
   <div class="container">
     <div class="row gx-3 gy-3">
       <div class="col" v-for="project in store.projects">
-        <project-card></project-card>
+        <project-card :project="project"></project-card>
       </div>
     </div>
   </div>
