@@ -8,6 +8,12 @@ export default {
     };
   },
 
+  methods: {
+    getAbstract(string) {
+      return string.substr(0, 40) + '...';
+    }
+  },
+
   props: ["project"],
 
   //   created() {
@@ -16,17 +22,15 @@ export default {
 };
 </script>
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="card" style="width: 18rem; height: 300px;" >
     <!-- <img src="..." class="card-img-top" alt="..." /> -->
     <div class="card-body">
       <h5 class="card-title">{{ this.project.name }}</h5>
       <p class="card-text">
-        {{ this.project.description }}
+        {{ this.getAbstract(this.project.description) }}
       </p>
-      <
-      <a href="<!-- BIND SHOW ROUTE -->" class="btn btn-primary"
-        >Mostra dettaglio</a
-      >
+      
+      <a href="<!-- BIND SHOW ROUTE -->" class="btn btn-primary">Mostra dettaglio</a>
     </div>
   </div>
 </template>
