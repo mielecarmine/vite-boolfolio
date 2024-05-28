@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import  { router }  from "./router.js";
 
 // import boostrapp css
 import "bootstrap/dist/css/bootstrap.css";
@@ -35,11 +36,8 @@ library.add(
     faLaravel
 );
 
-// import { createApp } from "vue";
-// import App from "./App.vue";
-// createApp(App).mount("#app");
-// app.component("font-awesome-icon", FontAwesomeIcon);
+
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-// app.use(router);
+app.use(router);
 app.mount("#app");
