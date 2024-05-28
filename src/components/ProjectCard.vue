@@ -10,7 +10,11 @@ export default {
 
   methods: {
     getAbstract(string) {
-      return string.substr(0, 40) + '...';
+      return string.substr(0, 80) + '...';
+    },
+
+    getAbstractTitle(title) {
+      return title.substr(0, 25) + '...';
     }
   },
 
@@ -24,8 +28,8 @@ export default {
 <template>
   <div class="card" style="width: 18rem; height: 300px;" >
     <!-- <img src="..." class="card-img-top" alt="..." /> -->
-    <div class="card-body">
-      <h4 class="card-title">{{ this.project.name }}</h4>
+    <div class="card-body d-flex flex-column">
+      <h4 class="card-title">{{ getAbstractTitle(this.project.name) }}</h4>
       <hr>
       <p class="card-text">
         {{ this.getAbstract(this.project.description) }}
@@ -78,6 +82,11 @@ export default {
   background-color: #9096bb;
   color: white;
   margin-bottom: 10px;
+}
+
+.btn {
+  margin-top: auto;
+  width: 60%; 
 }
 
 </style>
