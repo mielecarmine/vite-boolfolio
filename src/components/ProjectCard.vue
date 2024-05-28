@@ -38,7 +38,7 @@ export default {
       <span v-else-if="this.project.type.label == 'Backend'"  class="badge-backend">{{ this.project.type.label }}</span>
       <span v-else-if="this.project.type.label == 'Full-stack'"  class="badge-fullstack">{{ this.project.type.label }}</span>
       
-      <a href="<!-- BIND SHOW ROUTE -->" class="btn btn-primary">Mostra dettaglio</a>
+      <router-link :to="{name: 'project-detail', params: { slug: project.slug }}" class="btn btn-primary">Dettaglio</router-link>
     </div>
   </div>
 </template>
